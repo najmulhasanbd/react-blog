@@ -2,7 +2,7 @@
 
 
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleBookmark }) => {
 
     const { title, cover_image, author_img, reading_time, author, post_date, hashtags } = blog
 
@@ -20,7 +20,7 @@ const Blog = ({ blog }) => {
                 </div>
                 <div className="flex gap-2">
                     <span>{reading_time}</span>
-                    <span>Bookmark</span>
+                    <button onClick={()=>handleBookmark(blog)}>Bookmark</button>
                 </div>
             </div>
 

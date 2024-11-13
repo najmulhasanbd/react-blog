@@ -1,9 +1,17 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-key */
 import React from 'react'
+import Bookmark from '../Bookmark/Bookmark'
 
-const Bookmarks = () => {
+const Bookmarks = ({bookmark}) => {
+
+  
   return (
-    <div className='md:w-1/3 bg-red-700'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel ad fugiat architecto voluptates quis voluptas quia aliquid, magnam, ipsum, cumque quae eum veniam officia unde. Cumque distinctio officiis incidunt architecto.
+    <div className='md:w-1/3 '>
+      <h2 className='text-2xl font-bold mb-2'>Bookmark : {bookmark.length}</h2>
+      {
+        bookmark.map(bookmark => <Bookmark bookmark={bookmark}></Bookmark>)
+      }
     </div>
   )
 }
