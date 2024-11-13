@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react'
 import Blog from '../Blog/Blog'
 
-export const Blogs = ({handleBookmark}) => {
+export const Blogs = ({handleBookmark, handleMarkAsRead}) => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
@@ -13,7 +15,7 @@ export const Blogs = ({handleBookmark}) => {
     return (
         <div className='md:w-2/3 '>
             {
-                blogs.map(blog => <Blog key={blog.id} handleBookmark={handleBookmark} blog={blog}></Blog>)
+                blogs.map(blog => <Blog key={blog.id} handleMarkAsRead={handleMarkAsRead} handleBookmark={handleBookmark} blog={blog}></Blog>)
             }
         </div>
     )

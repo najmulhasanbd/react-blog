@@ -2,7 +2,7 @@
 
 
 
-const Blog = ({ blog, handleBookmark }) => {
+const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
 
     const { title, cover_image, author_img, reading_time, author, post_date, hashtags } = blog
 
@@ -30,6 +30,7 @@ const Blog = ({ blog, handleBookmark }) => {
                     hashtags.map((has, idx) => <span key={idx}><a href="">#{has}</a></span>)
                 }
             </p>
+            <button onClick={()=>handleMarkAsRead(reading_time)}>Mark as Read</button>
         </div>
     )
 }
